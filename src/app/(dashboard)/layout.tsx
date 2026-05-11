@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { cn } from "@/lib/utils";
@@ -11,7 +12,6 @@ import {
   BarChart2,
   Settings,
   LogOut,
-  Activity,
   Radio,
 } from "lucide-react";
 
@@ -43,12 +43,16 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     <div className="flex h-screen overflow-hidden bg-[#f5f5f7]">
       {/* Sidebar */}
       <aside className="w-56 bg-white border-r border-gray-200 flex flex-col shrink-0">
-        <div className="px-5 py-4 border-b border-gray-100 flex items-center gap-2.5">
-          <div className="w-7 h-7 bg-blue-600 rounded-lg flex items-center justify-center shrink-0">
-            <Activity className="w-4 h-4 text-white" />
-          </div>
+        <div className="px-5 py-4 border-b border-gray-100 flex items-center gap-3">
+          <Image
+            src="/octopus-logo.png"
+            alt="Octopus logo"
+            width={36}
+            height={36}
+            className="rounded-full shrink-0"
+          />
           <div>
-            <div className="text-sm font-semibold text-gray-900 leading-tight">SensorWatch</div>
+            <div className="text-sm font-semibold text-gray-900 leading-tight">Octopus</div>
             <div className="text-[10px] text-gray-400 leading-tight">Datacenter Monitor</div>
           </div>
         </div>
